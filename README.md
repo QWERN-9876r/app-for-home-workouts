@@ -1,14 +1,14 @@
 Запуск WEB приложения.
 Сначала необходимо запустить сервер:
 
-npm i
 cd server
+npm i
 npm start
 
 В другом терминале запускаем фронтенд:
 
-npm i
 cd TrainingApp
+npm i
 npm start -- --host
 
 По ссылке http://localhost:5173 запуститься svelte приложение.
