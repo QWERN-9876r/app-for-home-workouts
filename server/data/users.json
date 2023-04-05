@@ -1,0 +1,197 @@
+[
+    {
+        "name": "Admin",
+        "password": "8",
+        "startWeight": -10,
+        "weight": 99,
+        "isAdmin": true,
+        "programId": "1",
+        "kolPush-ups": "99999",
+        "StartKolPush-ups": "0",
+        "darkTheme": "true"
+    },
+    {
+        "name": "Dima",
+        "password": "Dimon",
+        "startWeight": "80",
+        "weight": "70",
+        "kolPush-ups": "10",
+        "StartKolPush-ups": "60",
+        "programId": "2",
+        "darkTheme": "false",
+        "language": "English"
+    },
+    {
+        "name": "Misha",
+        "startWeight": 300,
+        "weight": 1,
+        "password": "&&999443"
+    },
+    {
+        "name": "ElonMask",
+        "startWeight": 75,
+        "weight": 85,
+        "password": "123457"
+    },
+    {
+        "name": "NeScamer",
+        "password": "12345",
+        "startWeight": "90",
+        "weight": "15"
+    },
+    {
+        "name": "Dima2",
+        "password": "9999",
+        "startWeight": "80",
+        "weight": "65",
+        "programId": "1",
+        "kolPush-ups": "15",
+        "StartKolPush-ups": "55"
+    },
+    {
+        "name": "Gaben",
+        "password": "Egg",
+        "programId": "0",
+        "startWeight": "190",
+        "kolPush-ups": "-1",
+        "weight": "191",
+        "StartKolPush-ups": "-2"
+    },
+    {
+        "name": "Admin3",
+        "password": "8",
+        "startWeight": "77",
+        "weight": "60"
+    },
+    {
+        "name": "Admin5",
+        "password": "85",
+        "startWeight": "65",
+        "weight": "45"
+    },
+    {
+        "name": "Юля",
+        "password": "Ula",
+        "startWeight": "55",
+        "kolPush-ups": "5",
+        "weight": "47",
+        "StartKolPush-ups": "20",
+        "programId": "0"
+    },
+    {
+        "name": "What",
+        "password": "GG",
+        "startWeight": "10",
+        "kolPush-ups": "99",
+        "weight": "50",
+        "StartKolPush-ups": "159",
+        "darkTheme": "false",
+        "programId": "3"
+    },
+    {
+        "name": "nagibator3000",
+        "password": "777",
+        "startWeight": "kolWo",
+        "kolPush-ups": "Qw",
+        "weight": "0",
+        "StartKolPush-ups": "0",
+        "programId": "3",
+        "darkTheme": "true"
+    },
+    {
+        "name": "nagibator30",
+        "password": "777",
+        "darkTheme": "true",
+        "startWeight": "0kg",
+        "kolPush-ups": "0",
+        "StartKolPush-ups": "1",
+        "weight": "-1kg",
+        "programId": "1"
+    },
+    {
+        "name": "Gn0rl",
+        "password": "newpassword",
+        "programId": "7",
+        "darkTheme": "true",
+        "StartKolPush-ups": "1.44",
+        "weight": "11111",
+        "startWeight": "0.41"
+    },
+    {
+        "name": "Gn0rlывапывап",
+        "password": "newpasswordaывапывап",
+        "programId": "0",
+        "startWeight": "5",
+        "kolPush-ups": "1",
+        "weight": "1",
+        "StartKolPush-ups": "-19"
+    },
+    {
+        "name": "Person",
+        "password": "4",
+        "programId": "3"
+    },
+    {
+        "name": "Gn0rlsdfg",
+        "password": "newpasswordaasdf",
+        "programId": "3"
+    },
+    {
+        "name": "Gn0rlsdfg2",
+        "password": "12345",
+        "programId": "7"
+    },
+    {
+        "name": "^-^",
+        "password": "777",
+        "programId": "4",
+        "startWeight": "26",
+        "kolPush-ups": "3"
+    },
+    {
+        "name": "l13l252161234",
+        "password": "123412341234214",
+        "darkTheme": "true",
+        "kolPush-ups": "",
+        "programId": "5",
+        "startWeight": ""
+    },
+    {
+        "name": "gtgg",
+        "password": "eggeb",
+        "programId": "7",
+        "darkTheme": "false"
+    },
+    {
+        "name": "ghrth",
+        "password": "gegg",
+        "darkTheme": "false",
+        "programId": "0"
+    },
+    {
+        "name": "test",
+        "password": "",
+        "programId": "0",
+        "darkTheme": "true"
+    },
+    {
+        "name": "h",
+        "password": "/",
+        "programId": "1"
+    },
+    {
+        "name": "Admind",
+        "password": "",
+        "programId": "0",
+        "startWeight": "1",
+        "kolPush-ups": "1",
+        "weight": "1999",
+        "StartKolPush-ups": "1.35",
+        "darkTheme": "false"
+    },
+    {
+        "name": "йцуйцу",
+        "password": "йцуйцуйцу",
+        "programId": "0"
+    }
+]
