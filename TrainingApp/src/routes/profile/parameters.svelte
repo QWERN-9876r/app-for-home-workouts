@@ -27,18 +27,20 @@
 
 {/each}
 <script>
-    let user = JSON.parse(localStorage.getItem('user'))
+    import { user } from "../../staticData"
+    import { serverUrl } from "../../staticData"
+    import { setUser } from "../../staticData"
+
     const preKeys = [ {key: 'startWeight' , text: 'Вес', value: ''},
     { key: 'kolPush-ups', text: 'Количество отжиманий', value: '' } ],
      keys = [ {key: 'weight' , text: 'Вес', value: ''},
      { key: 'StartKolPush-ups', text: 'Количество отжиманий', value: '' }  ],
-     change = async ( key, value ) => {
+     change = ( key, value ) => {
         
-        await fetch( `http://localhost:5000/change?username=${user.name}&key=${key}&value=${value}` )
+        fetch( `${serverUrl}/change?username=${user.name}&key=${key}&value=${value}` )
         .then( res => res.json() )
-        .then( val => {
-            user = val
-            localStorage.setItem('user', JSON.stringify(val))
+        .then( value => {
+            setUser(value) 
         } )
     }
 </script>

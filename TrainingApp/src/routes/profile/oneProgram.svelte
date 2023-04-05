@@ -3,16 +3,22 @@
     <button on:click={Choose} class="programBtn">Выбрать</button>
 </div>
 <script>
+    import { serverUrl } from '../../staticData'
+    import { user } from '../../staticData'
+    import { setUser } from '../../staticData'
+
     export let name
     export let src
     export let id
-    let user = JSON.parse(localStorage.getItem('user'))
+    export let setRerender
+    
     const Choose = () => {
-        fetch( `http://localhost:5000/change?username=${user.name}&key=${'programId'}&value=${id}` )
+        
+        fetch( `${serverUrl}/change?username=${user.name}&key=programId&value=${id}` )
         .then( res => res.json() )
-        .then( val => {
-            user = val
-            localStorage.setItem('user', JSON.stringify(val))
+        .then( user => {
+            setUser(user)
+            setRerender(true) 
         } )
     
     }

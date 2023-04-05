@@ -1,9 +1,9 @@
 <main>
     <section>
         <h1>Регистрация</h1>
-        <input type="text" placeholder="имя" bind:value={name} on:input={() => {if ( !isNaN(Number(name[0])) || name[0] === '-' || name[0] === '=' || name[0] === '+' ) { name = '' }}} >
+        <input type="text" placeholder="имя" bind:value={name} on:input={() => {if ( incorrect() ) { name = '' }}} >
         <input type="password" placeholder="пароль" bind:value={password}>
-        <button on:click={ login }>Зарегистрироваться</button>
+        <button on:click={ register }>Зарегистрироваться</button>
         {#if error}
             <p>Пользователь с именем {name} уже существует</p>
         {/if }
@@ -11,11 +11,15 @@
 </main>
 
 <script>
+    import { serverUrl, setUser } from "../../staticData"
+
     let name = '',
      password = '',
      error = false
-    function login () {
-        fetch(`http://localhost:5000/register?username=${name}&password=${password}`).then(
+
+    const incorrect = () => !isNaN(Number(name[0])) || name[0] === '-' || name[0] === '=' || name[0] === '+',
+     register = () => {
+        fetch(`${serverUrl}/register?username=${name}&password=${password}`).then(
             res => {
                 if (res.ok) {
                     error = false
@@ -24,13 +28,12 @@
                     error = true
                 }
             }
-        ).then( val => {
-            if ( val[0] ) {
+        ).then( user => {
+            if ( user[0] ) {
                 error = true
                 return
             }
-            localStorage.setItem('name', name)
-            localStorage.setItem('user', JSON.stringify(val))
+            setUser(user)
             location = "/"
         } )
         

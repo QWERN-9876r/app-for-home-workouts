@@ -7,14 +7,15 @@
             <a href="register">Нет аккаунта?</a>
             <button on:click={ login }>Войти</button>
         </div>
+
         {#if error}
-            <p class="error" >
-                {#if typeof error === 'string'}
-                {error}
-                {:else}
-                Неверный логин или пароль
-                {/if}
-            </p>
+        <p class="error" >
+            {#if typeof error === 'string'}
+            {error}
+            {:else}
+            Неверный логин или пароль
+            {/if}
+        </p>
         {/if }
         
     </section>
@@ -22,12 +23,13 @@
 </main>
 
 <script>
+    import { serverUrl, setUser } from '../../staticData'
     let name = '',
      password = '',
      error = false
-    function login () {
+    const login = () => {
         try {
-            fetch(`http://localhost:5000/login?username=${name}&password=${password}`).then(
+            fetch(`${serverUrl}/login?username=${name}&password=${password}`).then(
                 res => {
                     if ( res.ok ) {
                         error = false
@@ -36,10 +38,9 @@
                         error = 'Ошибка отправки данных'
                     }
                 }
-            ).then( val => {
-                if ( val[0].name ) {
-                    localStorage.setItem('name', val[0].name)
-                    localStorage.setItem('user', JSON.stringify(val[0]))
+            ).then( value => {
+                if ( value[0].name ) {
+                    setUser(value[0])
                     location = "/"
                 } else {
                     error = true

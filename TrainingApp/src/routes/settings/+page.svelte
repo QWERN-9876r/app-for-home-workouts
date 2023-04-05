@@ -1,16 +1,16 @@
 {#if !user}
 <LoginWindow/>
+
 {:else}
 { #each CheckedSettings as {checked, name, engName}}
-<p><span>{name}</span> <Checkbox {checked} {engName} {user} /></p>
+  <p><span>{name}</span> <Checkbox {checked} {engName} /></p>
 {/each }
 { #each listSettings as {name, engName, answers} }
 <p><span>{name}</span>
-  <select on:change={ ({target}) => { fetch(`http://localhost:5000/change?username=${user.name}&key=${engName}&value=${target.value}`)
+  <select on:change={ ({target}) => { fetch(`${serverUrl}/change?username=${user.name}&key=${engName}&value=${target.value}`)
   .then( res => res.json() )
-        .then( val => {
-            user = val
-            localStorage.setItem('user', JSON.stringify(val))
+        .then( user => {
+            setUser(user)
         } )
 }}>
     {#each answers as answer}
@@ -25,8 +25,9 @@
 
 <script>
   import Checkbox from "./checkbox.svelte"
-  import LoginWindow from "../profile/loginWindow.svelte";
-  let user = JSON.parse(localStorage.getItem('user')) || null
+  import LoginWindow from "../profile/loginWindow.svelte"
+  import { serverUrl, user, setUser } from "../../staticData";
+
     const CheckedSettings = [
       {
         name: 'темная тема ( beta )',

@@ -193,5 +193,29 @@
         "name": "йцуйцу",
         "password": "йцуйцуйцу",
         "programId": "0"
+    },
+    {
+        "name": "EE",
+        "password": "ee",
+        "programId": "1",
+        "startWeight": "60",
+        "kolPush-ups": "20",
+        "weight": "60",
+        "StartKolPush-ups": "60"
+    },
+    {
+        "name": "Name",
+        "password": "222",
+        "darkTheme": "true",
+        "language": "English",
+        "programId": "5"
+    },
+    {
+        "name": "Qwern-9876r",
+        "password": "myPassword",
+        "startWeight": "50",
+        "kolPush-ups": "30",
+        "weight": "56",
+        "programId": "7"
     }
 ]

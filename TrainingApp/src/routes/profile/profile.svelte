@@ -1,13 +1,13 @@
 <Username/>
 <Card/>
 <Parameters/>
-<a href="profile"><img src="exit.png" alt="" on:click={exit} ></a>
+<a href="profile"><img src="exit.png" alt="" on:click={exit}></a>
 <script>
-    import Username from "./username.svelte";
-    import Card from "./card.svelte";
-    import Parameters from "./parameters.svelte";
+    import Username from "./username.svelte"
+    import Card from "./card.svelte"
+    import Parameters from "./parameters.svelte"
+    
     function exit() {
-        localStorage.removeItem('name')
         localStorage.removeItem('user')
         location.href = 'login';
     }

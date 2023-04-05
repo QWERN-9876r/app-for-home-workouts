@@ -1,20 +1,22 @@
 <label class="switch">
-    <input on:click={onOrEnd} bind:checked type="checkbox"/>
+    <input on:click={onOrOff} bind:checked type="checkbox"/>
     <span class="slider round"></span>
 </label>
 
 <script>
+    import { serverUrl, setUser, user } from "../../staticData";
+
     export let checked
     export let engName
-    export let user
+
     if ( typeof checked !== 'boolean' ) checked = false
-    const onOrEnd = () => {
-        fetch( `http://localhost:5000/change?username=${user.name}&key=${engName}&value=${!checked}` )
+
+    const onOrOff = () => {
+        fetch( `${serverUrl}/change?username=${user.name}&key=${engName}&value=${!checked}` )
         .then( res => res.json() )
-        .then( val => {
-            user = val
-            localStorage.setItem('user', JSON.stringify(val))
-            if ( user.darkTheme === 'true' ) {
+        .then( modifiedUser => {
+            setUser(modifiedUser)
+            if ( modifiedUser.darkTheme === 'true' ) {
                 window.document.body.classList.add('dark-mode')
             } else {
                 window.document.body.classList.remove('dark-mode')
@@ -23,14 +25,6 @@
     }
 </script>
 <style>
-    :global(body) {
-		background-color: white;
-		transition: background-color 0.3s
-	}
-	:global(body.dark-mode) {
-		background-color: #1d3040;
-		color: #bfc2c7;
-	}
     .switch {
         position: relative;
         display: inline-block;

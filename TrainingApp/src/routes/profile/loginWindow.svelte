@@ -7,6 +7,7 @@
         </section>
     </div>
 </main>
+
 <style> 
     
     a {

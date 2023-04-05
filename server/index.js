@@ -58,11 +58,11 @@ app.get('/register', (req, res) => {
             password: req.query.password,
         }
         
-        let newUsers = Array.from(data.users)
+        data.users = Array.from(data.users)
     
-        newUsers.push(newUser)
+        data.users.push(newUser)
     
-        fs.writeFileSync('./data/users.json', JSON.stringify(newUsers, 4, 4))
+        fs.writeFileSync('./data/users.json', JSON.stringify(data.users, 4, 4))
         res.json(newUser)
     }
 })
@@ -70,11 +70,12 @@ app.get('/register', (req, res) => {
 app.get('/change', ( req, res ) => {
     const users = Array.from(data.users)
     let userNow
-    users.forEach( (user, i) => {
+    users.forEach( ( user, i ) => {
         if ( user.name === req.query.username ) userNow = i
     } )
     users[userNow][req.query.key] = req.query.value
     fs.writeFileSync('./data/users.json', JSON.stringify(users, 4, 4))
+    data.users = users
     res.json(users[userNow])
 })
 app.get( '/programs', ( req, res ) => {

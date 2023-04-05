@@ -2,17 +2,19 @@
     <h3 class="programName">{name}</h3>
     <button class="programBtn">Смотреть план</button>
 </div>
+
 <script>
-    import { onMount } from "svelte";
-    
-    let name, src,
-     user = JSON.parse(localStorage.getItem('user'))
+    import { onMount } from "svelte"
+    import { serverUrl } from "../../staticData"
+    import { user } from "../../staticData"
+
+    let name, src
     onMount(() => {
-        fetch(`http://localhost:5000/program?id=${Number(user.programId)}`)
+        fetch(`${serverUrl}/program?id=${user.programId}`)
         .then( res => res.json() )
-        .then( val => {
-            name = val.name
-            src = val.src
+        .then( program => {
+            name = program.name
+            src = program.src
         } )
     })
     

@@ -1,11 +1,16 @@
 <title>News and sprort</title>
+
+{#if user}
 <h2>Начать тренировку</h2>
 <a class="start" href="/workout" >Начнем</a>
+{/if}
+
 <h1 class="RecomendationText">Новости:</h1>
 <News/>
-<a href="/news">НУЖНО БОЛЬШЕ ЗОЛОТА</a>
+<a href="/news">Больше новостей</a>
 <script>
-    import News from "./news.svelte";
+    import News from "./news.svelte"
+	import { user } from "../staticData"
 </script>
 <style>
     .start {

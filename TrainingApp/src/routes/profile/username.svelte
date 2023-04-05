@@ -1,5 +1,12 @@
-<script>
-    const characterName = localStorage.getItem('name')
-</script>
+<h1>{user.name}</h1>
 
-<h1>{characterName}</h1>
+<script>
+    import { user } from "../../staticData";
+</script>
+<style>
+    @media ( min-width: 500px ) {
+        h1 {
+            font-size: 40px;
+        }
+    }
+</style>

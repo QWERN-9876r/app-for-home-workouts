@@ -1,9 +1,11 @@
-<img src="http://localhost:5000?src=relax.png" alt="">
+<img src={`${serverUrl}?src=relax.png`} alt="">
 <h3>{counter}</h3>
 <h1>{ user && user.language === "Engish" ? "Relax" : "Отдых" }</h1>
+
 <script>
-    let user = JSON.parse(localStorage.getItem('user')) || null,
-     counter = 30
+    import { user, serverUrl } from "../staticData";
+
+    let counter = 30
      setInterval( () => counter--, 1000 )
 </script>
 <style>

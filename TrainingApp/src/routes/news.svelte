@@ -15,13 +15,15 @@
     <Loading/>
 {/if}
 <script>
-    import { onMount } from "svelte";
-    import Loading from "./loading.svelte";
+    import { onMount } from "svelte"
+    import Loading from "./loading.svelte"
+    import { serverUrl } from "../staticData";
+
     let listUpdate
 
     let news = new Object(null);
     onMount(() => {
-        fetch('http://localhost:5000/news')
+        fetch(`${serverUrl}/news`)
             .then(res => res.json())
                 .then(val => {
                     news.title = val[0].title

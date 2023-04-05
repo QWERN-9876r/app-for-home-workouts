@@ -10,6 +10,14 @@
 </footer>
 
 <style>
+    :global(body) {
+		background-color: white;
+		transition: background-color 0.3s
+	}
+	:global(body.dark-mode) {
+		background-color: #1d3040;
+		color: #bfc2c7;
+	}
     footer {
         display: flex;
         z-index: 2;

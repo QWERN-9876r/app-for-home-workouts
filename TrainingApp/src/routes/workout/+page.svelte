@@ -1,5 +1,6 @@
 {#if isRelax}
 <Relax/>
+
 {:else}
 {#if exercises.length && plan.length}
 <section>
@@ -31,12 +32,12 @@
 <script>
     import Header from "./header.svelte"
     import Main from "./Main.svelte"
-    import Loading from "../loading.svelte";
-    import Relax from "../relax.svelte";
+    import Loading from "../loading.svelte"
+    import Relax from "../relax.svelte"
+    import { serverUrl, user } from "../../staticData"
 
     let plan = new Array(),
      exercises = new Array(),
-     user = JSON.parse(localStorage.getItem('user')),
      i = 0,
      isRelax = false
     const further = () => {
@@ -47,7 +48,7 @@
         }, 30000)
     }
 
-    fetch( 'http://localhost:5000/startTraining?id=' + user.programId )
+    fetch( `${serverUrl}/startTraining?id=${user.programId}`)
     .then( res => res.json() )
     .then( training => {
         [ plan, exercises ] = training
