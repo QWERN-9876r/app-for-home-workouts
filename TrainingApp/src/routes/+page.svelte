@@ -3,7 +3,7 @@
 <a class="start" href="/workout" >Начнем</a>
 <h1 class="RecomendationText">Новости:</h1>
 <News/>
-<a href="/news">НУЖНО БОЛЬШЕ ЗОЛОТА</a>
+<a href="/news">Больше новостей</a>
 <script>
     import News from "./news.svelte";
 </script>
