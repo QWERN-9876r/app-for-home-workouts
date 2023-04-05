@@ -1,11 +1,13 @@
 Запуск WEB приложения.
 Сначала необходимо запустить сервер:
 
+npm i
 cd server
 npm start
 
 В другом терминале запускаем фронтенд:
 
+npm i
 cd TrainingApp
 npm start -- --host
 
