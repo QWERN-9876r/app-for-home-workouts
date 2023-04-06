@@ -24,6 +24,7 @@
 
 <script>
     import { serverUrl, setUser } from '../../staticData'
+    
     let name = '',
      password = '',
      error = false

@@ -4,12 +4,12 @@
             <div>{news.text}</div>
             <br>
             <ol>
-                {#each listUpdate as list }
-                    <li>{list}</li>
+                {#each listUpdate as listItem }
+                    <li>{listItem}</li>
                 {/each}
             </ol>
             <br>
-            <div>{news.date}</div>
+            <time datetime={news.date.replaceAll('.', '_')} >{news.date}</time>
         </section>
 {:else}
     <Loading/>
@@ -25,11 +25,9 @@
     onMount(() => {
         fetch(`${serverUrl}/news`)
             .then(res => res.json())
-                .then(val => {
-                    news.title = val[0].title
-                    news.text = val[0].text
-                    news.date = val[0].date
-                    listUpdate = val[0].listUpdates
+                .then(NewNews => {
+                    news = NewNews[0]
+                    listUpdate = NewNews[0].listUpdates
                 });
     })
 </script>

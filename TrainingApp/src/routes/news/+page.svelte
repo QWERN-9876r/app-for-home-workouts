@@ -12,13 +12,14 @@
             {/each}
         </ol>
         <br>
-        <div>{news.date}</div>
+        <time datetime={news.date.replaceAll('.', '_')} >{news.date}</time>
     </section>
 {/each}
 </div>
 
 <script>
     import { serverUrl } from '../../staticData'
+    
     let news = new Array(),
      listUpdate
 
@@ -27,8 +28,7 @@
     onMount(() => {
     fetch(`${serverUrl}/news`)
             .then(res => res.json())
-                .then(val => {news = val
-                console.log(news)})
-            })
+                .then(newNews => news = newNews)
+    })
 
 </script>
