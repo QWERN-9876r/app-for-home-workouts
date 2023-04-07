@@ -1,11 +1,10 @@
 <div class="programBlock" style="background-image: url({src}); " >
     <h3 class="programName">{name}</h3>
-    <button on:click={Choose} class="programBtn">Выбрать</button>
+    <button on:click={Choose} class="programBtn">{translations.get('choose').get(user.language)}</button>
 </div>
 <script>
-    import { serverUrl } from '../../staticData'
-    import { user } from '../../staticData'
-    import { setUser } from '../../staticData'
+    import { serverUrl, user, setUser } from '../../staticData'
+    import translations from '../../translation'
 
     export let name
     export let src

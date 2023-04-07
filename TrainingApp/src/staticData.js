@@ -15,5 +15,5 @@ export let user = person
 export const setUser = value => {
     user = value
     delete user.password
-    if ( localStorage.length ) localStorage.setItem('user', JSON.stringify(value))
+    localStorage.setItem('user', JSON.stringify(value))
 }

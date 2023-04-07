@@ -1,20 +1,18 @@
 <title>News and sprort</title>
 
 {#if user}
-<h2>{ user.language ? startWorkout.get(user.language) : 'Начать тренировку'}</h2>
+<h2>{ user.language ? translations.get('startWorkout').get(user.language) : 'Начать тренировку'}</h2>
 <a class="start" href="/workout" >Начнем</a>
 {/if}
 
-<h1 class="RecomendationText">Новости:</h1>
+<h1 class="RecomendationText">{translations.get('news').get(user.language)} :</h1>
 <News/>
 <a href="/news">Больше новостей</a>
 <script>
     import News from "./news.svelte"
 	import { user } from "../staticData"
+	import translations from '../translation'
 
-	const startWorkout = new Map()
-	startWorkout.set('English', 'Start workout')
-	startWorkout.set('Русский', 'Начать тренировку')
 </script>
 <style>
     .start {

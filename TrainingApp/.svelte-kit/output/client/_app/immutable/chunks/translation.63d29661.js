@@ -1,0 +1,1 @@
+const o=new Map([["startWorkout",new Map([["English","Start workout"],["Русский","Начать тренировку"]])],["ChooseProgram",new Map([["English","Choose a training program"],["Русский","Выбрать программу тренировок"]])]]);export{o as t};

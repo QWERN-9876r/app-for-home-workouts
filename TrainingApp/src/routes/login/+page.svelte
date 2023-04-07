@@ -24,7 +24,8 @@
 
 <script>
     import { serverUrl, setUser } from '../../staticData'
-    
+    import translation from '../../translation'
+
     let name = '',
      password = '',
      error = false

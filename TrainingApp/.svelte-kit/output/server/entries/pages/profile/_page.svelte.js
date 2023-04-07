@@ -1,5 +1,6 @@
 import { c as create_ssr_component, e as escape, v as validate_component, f as each, d as add_attribute } from "../../../chunks/index.js";
 import { u as user } from "../../../chunks/staticData.js";
+import { t as translations } from "../../../chunks/translation.js";
 import { L as LoginWindow } from "../../../chunks/loginWindow.js";
 const username_svelte_svelte_type_style_lang = "";
 const css$4 = {
@@ -27,7 +28,7 @@ const Card = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let rerender;
   const setRerender = (value) => rerender = value;
   rerender = setRerender(false);
-  return `${user.programId || rerender ? `${validate_component(UserProgram, "UserProgram").$$render($$result, {}, {}, {})}` : `${`<button>Выбрать программу тренировок</button>`}`}`;
+  return `${user.programId || rerender ? `${validate_component(UserProgram, "UserProgram").$$render($$result, {}, {}, {})}` : `${`<button>${escape(translations.get("ChooseProgram").get(user.language || "Русский"))}</button>`}`}`;
 });
 const parameters_svelte_svelte_type_style_lang = "";
 const css$2 = {

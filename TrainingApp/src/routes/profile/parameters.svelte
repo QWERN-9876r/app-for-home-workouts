@@ -1,46 +1,52 @@
-<h2>Было:</h2>
+<h2>{translations.get('itWas').get(user.language)}:</h2>
 {#each preKeys as objectKey}
     <div class="parametr">
         {#if user[objectKey.key]}
         {objectKey.text}: {user[objectKey.key]}
         {:else}
         {objectKey.text}
-        <input bind:value={objectKey.value} type="number" on:input={() => {if ( objectKey.value < 0 || objectKey.value > 11111 ) objectKey.value = 1} }>
-        <button on:click={() => {change(objectKey.key, objectKey.value)}} >Отправить</button>
+        <input bind:value={objectKey.value} type="number" min="1" max="3000">
+        <button on:click={() => {change(objectKey.key, objectKey.value)}} >
+            {translations.get('send').get(user.language)} </button>
         {/if}
     </div>
     
 {/each}
 
-<h2>Стало:</h2>
+<h2>{translations.get('hasBecome').get(user.language)}:</h2>
 {#each keys as objectKey}
 <div class="parametr">
     {#if user[objectKey.key]}
     {objectKey.text}: {user[objectKey.key]}
-    <button on:click={() => {user[objectKey.key] = false}}>Изменить</button>
+    <button on:click={() => {user[objectKey.key] = false}}>
+        {translations.get('change').get(user.language)} </button>
     {:else}
     {objectKey.text}
-    <input bind:value={objectKey.value} type="number" on:input={() => {if ( objectKey.value < 0 || objectKey.value > 11111 ) objectKey.value = 1} }>
-    <button on:click={() => {change(objectKey.key, objectKey.value)}} >Отправить</button>
+    <input bind:value={objectKey.value} type="number"
+      min="1" max="3000">
+    <button on:click={() => {change(objectKey.key, objectKey.value)}}>
+        {translations.get('send').get(user.language)} </button>
     {/if}
 </div>
 
 {/each}
 <script>
-    import { user } from "../../staticData"
-    import { serverUrl } from "../../staticData"
-    import { setUser } from "../../staticData"
+    import { user, serverUrl, setUser } from "../../staticData"
+    import translations from "../../translation"
 
-    const preKeys = [ {key: 'startWeight' , text: 'Вес', value: ''},
-    { key: 'kolPush-ups', text: 'Количество отжиманий', value: '' } ],
-     keys = [ {key: 'weight' , text: 'Вес', value: ''},
-     { key: 'StartKolPush-ups', text: 'Количество отжиманий', value: '' }  ],
+    const preKeys = [ {key: 'startWeight' , 
+    text: translations.get('weight').get(user.language), value: ''},
+    { key: 'kolPush-ups', 
+    text: translations.get('kolPush-ups').get(user.language), value: '' } ],
+     keys = [ {key: 'weight' , 
+     text: translations.get('weight').get(user.language), value: ''},
+     { key: 'StartKolPush-ups', text: translations.get('kolPush-ups').get(user.language), value: '' }  ],
      change = ( key, value ) => {
-        
+        user[key] = value
         fetch( `${serverUrl}/change?username=${user.name}&key=${key}&value=${value}` )
         .then( res => res.json() )
-        .then( value => {
-            setUser(value) 
+        .then( newUser => {
+            setUser(newUser)
         } )
     }
 </script>

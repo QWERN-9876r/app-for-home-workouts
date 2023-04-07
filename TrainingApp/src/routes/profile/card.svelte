@@ -8,14 +8,14 @@
 <OneProgram {name} {src} {id} {setRerender} />
 {/each}
 {:else}
-<button on:click={getPrograms}>Выбрать программу тренировок</button>
+<button on:click={getPrograms}>{translations.get('chooseProgram').get(user.language || 'Русский')}</button>
 {/if}
 {/if}
 <script>
     import OneProgram from "./oneProgram.svelte"
     import UserProgram from "./userProgram.svelte"
-    import { serverUrl } from '../../staticData'
-    import { user } from "../../staticData"
+    import { serverUrl, user } from '../../staticData'
+    import translations from "../../translation"
 
     const setRerender = value => rerender = value
     let choice = false,

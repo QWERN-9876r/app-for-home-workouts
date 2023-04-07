@@ -3,7 +3,7 @@
         "name": "Admin",
         "password": "8",
         "startWeight": -10,
-        "weight": 99,
+        "weight": "60",
         "isAdmin": true,
         "programId": "1",
         "kolPush-ups": "99999",
@@ -218,5 +218,12 @@
         "weight": "56",
         "programId": "7",
         "language": "Русский"
+    },
+    {
+        "name": "User2",
+        "password": "555",
+        "language": "English",
+        "weight": "50",
+        "StartKolPush-ups": "45"
     }
 ]
