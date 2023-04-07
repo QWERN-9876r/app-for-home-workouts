@@ -1,0 +1,1 @@
+const t="http://localhost:5000";let e=localStorage.getItem("user")?JSON.parse(localStorage.getItem("user")):null;e&&delete e.password;const r=s=>{e=s,delete e.password,localStorage.setItem("user",JSON.stringify(s))};export{r as a,t as s,e as u};
