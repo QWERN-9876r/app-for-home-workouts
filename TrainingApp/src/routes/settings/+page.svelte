@@ -30,14 +30,14 @@
 
     const CheckedSettings = [
       {
-        name: 'темная тема ( beta )',
+        name: translations.get(' darkTheme').get(user.language) ( beta )',
         engName: 'darkTheme',
         checked: user && (Object.keys(user).includes('darkTheme') && user['darkTheme'] === 'true') ?  true : false
       }
     ],
     listSettings = [
       {
-        name: 'язык',
+        name: translations.get('language').get(user.language),
         engName: 'language',
         answers: [
           'Русский',
@@ -72,3 +72,4 @@
     border-color: black;
   }
 </style>
+
