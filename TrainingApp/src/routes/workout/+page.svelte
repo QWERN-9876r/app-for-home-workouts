@@ -34,6 +34,7 @@
     import Main from "./Main.svelte"
     import Loading from "../loading.svelte"
     import Relax from "../relax.svelte"
+    import { onMount } from "svelte"
     import { serverUrl, user } from "../../staticData"
 
     let plan = new Array(),
@@ -47,15 +48,16 @@
             i++
         }, 30000)
     }
-
+    onMount( () => {
+        
     fetch( `${serverUrl}/startTraining?id=${user.programId}`)
     .then( res => res.json() )
     .then( training => {
         [ plan, exercises ] = training
     } )
-
-    
-
+    } )
+        
+        
 </script>
 <style>
     section {

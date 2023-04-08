@@ -14,9 +14,15 @@
         } )
 }}>
     {#each answers as answer}
-    <option value={answer}>
+    {#if user[engName] === answer}
+    <option value={answer} selected >
       {answer}
     </option>
+    {:else}
+    <option value={answer} >
+      {answer}
+    </option>
+    {/if}
     {/each}
   </select>
 </p>
@@ -26,18 +32,21 @@
 <script>
   import Checkbox from "./checkbox.svelte"
   import LoginWindow from "../profile/loginWindow.svelte"
-  import { serverUrl, user, setUser } from "../../staticData";
+  import { serverUrl, user, setUser } from "../../staticData"
+  import translations from "../../translation"
 
+  // const Select = ( engName, answer ) => user[engName] === answer ? 'selected' : ''
+    
     const CheckedSettings = [
       {
-        name: translations.get(' darkTheme').get(user.language) ( beta )',
+        name: translations.get('darkTheme').get(user ? user.language : 'Русский') + ' ( beta )',
         engName: 'darkTheme',
         checked: user && (Object.keys(user).includes('darkTheme') && user['darkTheme'] === 'true') ?  true : false
       }
     ],
     listSettings = [
       {
-        name: translations.get('language').get(user.language),
+        name: translations.get('language').get(user ? user.language : 'Русский'),
         engName: 'language',
         answers: [
           'Русский',

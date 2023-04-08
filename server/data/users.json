@@ -222,8 +222,10 @@
     {
         "name": "User2",
         "password": "555",
-        "language": "English",
+        "language": "Русский",
         "weight": "50",
-        "StartKolPush-ups": "45"
+        "StartKolPush-ups": "45",
+        "darkTheme": "false",
+        "programId": "0"
     }
 ]

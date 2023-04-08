@@ -17,7 +17,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 ${user ? `<h2>${escape(user.language ? translations.get("startWorkout").get(user.language) : "Начать тренировку")}</h2>
 <a class="start svelte-1b7b4fg" href="/workout">Начнем</a>` : ``}
 
-<h1 class="RecomendationText">Новости:</h1>
+<h1 class="RecomendationText">${escape(translations.get("news").get(user.language))} :</h1>
 ${validate_component(News, "News").$$render($$result, {}, {}, {})}
 <a href="/news">Больше новостей</a>`;
 });

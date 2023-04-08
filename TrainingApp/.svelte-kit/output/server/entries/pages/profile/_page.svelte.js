@@ -28,7 +28,7 @@ const Card = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let rerender;
   const setRerender = (value) => rerender = value;
   rerender = setRerender(false);
-  return `${user.programId || rerender ? `${validate_component(UserProgram, "UserProgram").$$render($$result, {}, {}, {})}` : `${`<button>${escape(translations.get("ChooseProgram").get(user.language || "Русский"))}</button>`}`}`;
+  return `${user.programId || rerender ? `${validate_component(UserProgram, "UserProgram").$$render($$result, {}, {}, {})}` : `${`<button>${escape(translations.get("chooseProgram").get(user.language || "Русский"))}</button>`}`}`;
 });
 const parameters_svelte_svelte_type_style_lang = "";
 const css$2 = {
@@ -39,37 +39,41 @@ const Parameters = create_ssr_component(($$result, $$props, $$bindings, slots) =
   const preKeys = [
     {
       key: "startWeight",
-      text: "Вес",
+      text: translations.get("weight").get(user.language),
       value: ""
     },
     {
       key: "kolPush-ups",
-      text: "Количество отжиманий",
+      text: translations.get("kolPush-ups").get(user.language),
       value: ""
     }
   ], keys = [
-    { key: "weight", text: "Вес", value: "" },
+    {
+      key: "weight",
+      text: translations.get("weight").get(user.language),
+      value: ""
+    },
     {
       key: "StartKolPush-ups",
-      text: "Количество отжиманий",
+      text: translations.get("kolPush-ups").get(user.language),
       value: ""
     }
   ];
   $$result.css.add(css$2);
-  return `<h2>Было:</h2>
+  return `<h2>${escape(translations.get("itWas").get(user.language))}:</h2>
 ${each(preKeys, (objectKey) => {
     return `<div class="parametr svelte-1kbkc2s">${user[objectKey.key] ? `${escape(objectKey.text)}: ${escape(user[objectKey.key])}` : `${escape(objectKey.text)}
-        <input type="number" class="svelte-1kbkc2s"${add_attribute("value", objectKey.value, 0)}>
-        <button>Отправить</button>`}
+        <input type="number" min="1" max="3000" class="svelte-1kbkc2s"${add_attribute("value", objectKey.value, 0)}>
+        <button>${escape(translations.get("send").get(user.language))} </button>`}
     </div>`;
   })}
 
-<h2>Стало:</h2>
+<h2>${escape(translations.get("hasBecome").get(user.language))}:</h2>
 ${each(keys, (objectKey) => {
     return `<div class="parametr svelte-1kbkc2s">${user[objectKey.key] ? `${escape(objectKey.text)}: ${escape(user[objectKey.key])}
-    <button>Изменить</button>` : `${escape(objectKey.text)}
-    <input type="number" class="svelte-1kbkc2s"${add_attribute("value", objectKey.value, 0)}>
-    <button>Отправить</button>`}
+    <button>${escape(translations.get("change").get(user.language))} </button>` : `${escape(objectKey.text)}
+    <input type="number" min="1" max="3000" class="svelte-1kbkc2s"${add_attribute("value", objectKey.value, 0)}>
+    <button>${escape(translations.get("send").get(user.language))} </button>`}
 </div>`;
   })}`;
 });
