@@ -1,7 +1,10 @@
 [
     {
         "id": 0,
-        "name": "Сила (начинающий)",
+        "name": {
+            "Русский": "Сила (начинающий)",
+            "English": "Power (beginer)"
+        },
         "src": "http://localhost:5000?src=beginer.jpeg",
         "plan": [
             [
@@ -29,7 +32,10 @@
     },
     {
         "id": 1,
-        "name": "Сила (продолжающий)",
+        "name": {
+            "Русский": "Сила (продолжающий)",
+            "English": "Power (continuing)"
+        },
         "src": "http://localhost:5000?src=опытный.jpeg",
         "plan": [
             [
@@ -57,7 +63,10 @@
     },
     {
         "id": 2,
-        "name": "Сила (опытный)",
+        "name": {
+            "Русский": "Сила (опытный)",
+            "English": "Power (experienced)"
+        },
         "src": "http://localhost:5000?src=продолжающий.jpg",
         "plan": [
             [
@@ -85,7 +94,10 @@
     },
     {
         "id": 3,
-        "name": "Сила (професионал)",
+        "name": {
+            "Русский": "Сила (профессионал)",
+            "English": "Power (professional)"
+        },
         "src": "http://localhost:5000?src=профисионал.jpg",
         "plan": [
             [
@@ -113,7 +125,10 @@
     },
     {
         "id": 4,
-        "name": "Выносливость (начинающий)",
+        "name": {
+            "Русский": "Выносливость (начинающий)",
+            "English": "Endurance (beginner)"
+        },
         "src": "https://thumbs.dreamstime.com/b/%D0%B1%D0%B5%D0%B3%D1%83%D1%89%D0%B8%D0%B9-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA-%D0%B1%D0%B5%D0%B3%D0%B0%D0%B5%D1%82-%D0%BD%D0%B0-%D0%BF%D0%BB%D1%8F%D0%B6%D0%B5-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B1%D0%B5%D0%B3%D1%83%D0%BD%D0%BE%D0%B2-%D0%B2%D0%BD%D0%B5-%D1%82%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D0%BA-158041771.jpg",
         "plan": [
             [
@@ -141,7 +156,10 @@
     },
     {
         "id": 5,
-        "name": "Выносливость (продолжающий)",
+        "name": {
+            "Русский": "Выносливость (начинающий)",
+            "English": "Endurance (continuing)"
+        },
         "src": "https://img.freepik.com/premium-photo/jogging-his-way-to-good-health-full-length-rear-view-of-young-man-in-sportswear-running-on-treadmill-in-front-of-window-at-gym_425904-17739.jpg",
         "plan": [
             [
@@ -169,7 +187,10 @@
     },
     {
         "id": 6,
-        "name": "Выносливость (опытный)",
+        "name": {
+            "Русский": "Выносливость (опытный)",
+            "English": "Endurance (experienced)"
+        },
         "src": "https://st.focusedcollection.com/14026668/i/650/focused_164883672-stock-photo-running-man-listening-music.jpg",
         "plan": [
             [
@@ -197,7 +218,10 @@
     },
     {
         "id": 7,
-        "name": "Выносливость (професионал)",
+        "name": {
+            "Русский": "Выносливость (профессионал)",
+            "English": "Endurance (professional)"
+        },
         "src": "https://st.focusedcollection.com/14026668/i/650/focused_461002354-stock-photo-sportsman-running-racetrack.jpg",
         "plan": [
             [

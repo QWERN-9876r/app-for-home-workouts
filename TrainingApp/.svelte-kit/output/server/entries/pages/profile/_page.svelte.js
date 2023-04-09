@@ -20,7 +20,7 @@ const css$3 = {
 const UserProgram = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let name, src;
   $$result.css.add(css$3);
-  return `<div class="programBlock svelte-47xacu" style="${"background-image: url(" + escape(src, true) + ");"}"><h3 class="programName svelte-47xacu">${escape(name)}</h3>
+  return `<div class="programBlock svelte-47xacu" style="${"background-image: url(" + escape(src, true) + ");"}"><h3 class="programName svelte-47xacu">${escape(name[user.language])}</h3>
     <button class="programBtn svelte-47xacu">Смотреть план</button>
 </div>`;
 });

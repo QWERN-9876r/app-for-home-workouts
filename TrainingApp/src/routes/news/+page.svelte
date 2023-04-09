@@ -19,14 +19,13 @@
 
 <script>
     import { serverUrl } from '../../staticData'
+    import { onMount } from "svelte"
     
     let news = new Array(),
      listUpdate
 
-    import { onMount } from "svelte"
-
     onMount(() => {
-    fetch(`${serverUrl}/news`)
+        fetch(`${serverUrl}/news`)
             .then(res => res.json())
                 .then(newNews => news = newNews)
     })

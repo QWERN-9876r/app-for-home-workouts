@@ -39,14 +39,14 @@
     
     const CheckedSettings = [
       {
-        name: translations.get('darkTheme').get(user ? user.language : 'Русский') + ' ( beta )',
+        name: translations.get('darkTheme').get(user && user.language ? user.language : 'Русский') + ' ( beta )',
         engName: 'darkTheme',
         checked: user && (Object.keys(user).includes('darkTheme') && user['darkTheme'] === 'true') ?  true : false
       }
     ],
     listSettings = [
       {
-        name: translations.get('language').get(user ? user.language : 'Русский'),
+        name: translations.get('language').get(user && user.language ? user.language : 'Русский'),
         engName: 'language',
         answers: [
           'Русский',

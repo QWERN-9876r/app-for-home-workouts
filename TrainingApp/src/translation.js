@@ -55,6 +55,10 @@ const translations = new Map([
         [ 'English', 'more news' ],
         [ 'Русский', 'Больше новостей' ]
     ])],
+    ['showPlan', new Map([
+        [ 'English', 'show plan' ],
+        [ 'Русский', 'Смотреть план' ]
+    ])],
 ])
-// translations.get('darkTheme').get(user ? user.language : 'Русский')
+// translations.get('showPlan').get( user.language || 'Русский' )
 export default translations

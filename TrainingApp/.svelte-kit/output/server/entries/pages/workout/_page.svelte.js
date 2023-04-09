@@ -88,9 +88,6 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       3e4
     );
   };
-  fetch(`${serverUrl}/startTraining?id=${user.programId}`).then((res) => res.json()).then((training) => {
-    [plan, exercises] = training;
-  });
   $$result.css.add(css);
   return `${isRelax ? `${validate_component(Relax, "Relax").$$render($$result, {}, {}, {})}` : `${exercises.length && plan.length ? `<section class="svelte-2ve36k"><header class="svelte-2ve36k">${validate_component(Header, "Header").$$render($$result, { i, quanity: plan[0].length }, {}, {})}</header>
 

@@ -49,7 +49,6 @@
         }, 30000)
     }
     onMount( () => {
-        
     fetch( `${serverUrl}/startTraining?id=${user.programId}`)
     .then( res => res.json() )
     .then( training => {

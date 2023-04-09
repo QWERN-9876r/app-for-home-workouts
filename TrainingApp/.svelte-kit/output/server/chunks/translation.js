@@ -46,6 +46,14 @@ const translations = /* @__PURE__ */ new Map([
   ["language", /* @__PURE__ */ new Map([
     ["English", "language"],
     ["Русский", "язык"]
+  ])],
+  ["start", /* @__PURE__ */ new Map([
+    ["English", "start"],
+    ["Русский", "начать"]
+  ])],
+  ["moreNews", /* @__PURE__ */ new Map([
+    ["English", "more news"],
+    ["Русский", "Больше новостей"]
   ])]
 ]);
 export {

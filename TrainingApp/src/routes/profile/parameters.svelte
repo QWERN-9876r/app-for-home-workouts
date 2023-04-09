@@ -1,4 +1,4 @@
-<h2>{translations.get('itWas').get(user.language)}:</h2>
+<h2>{translations.get('itWas').get(user.language || 'Русский')}:</h2>
 {#each preKeys as objectKey}
     <div class="parametr">
         {#if user[objectKey.key]}
@@ -7,25 +7,25 @@
         {objectKey.text}
         <input bind:value={objectKey.value} type="number" min="1" max="3000">
         <button on:click={() => {change(objectKey.key, objectKey.value)}} >
-            {translations.get('send').get(user.language)} </button>
+            {translations.get('send').get(user.language || 'Русский')} </button>
         {/if}
     </div>
     
 {/each}
 
-<h2>{translations.get('hasBecome').get(user.language)}:</h2>
+<h2>{translations.get('hasBecome').get(user.language || 'Русский')}:</h2>
 {#each keys as objectKey}
 <div class="parametr">
     {#if user[objectKey.key]}
     {objectKey.text}: {user[objectKey.key]}
     <button on:click={() => {user[objectKey.key] = false}}>
-        {translations.get('change').get(user.language)} </button>
+        {translations.get('change').get(user.language || 'Русский')} </button>
     {:else}
     {objectKey.text}
     <input bind:value={objectKey.value} type="number"
       min="1" max="3000">
     <button on:click={() => {change(objectKey.key, objectKey.value)}}>
-        {translations.get('send').get(user.language)} </button>
+        {translations.get('send').get( user.language || 'Русский' || 'Русский' || 'Русский' )} </button>
     {/if}
 </div>
 
@@ -35,12 +35,12 @@
     import translations from "../../translation"
 
     const preKeys = [ {key: 'startWeight' , 
-    text: translations.get('weight').get(user.language), value: ''},
+    text: translations.get('weight').get(user.language || 'Русский' || 'Русский'), value: ''},
     { key: 'kolPush-ups', 
-    text: translations.get('kolPush-ups').get(user.language), value: '' } ],
+    text: translations.get('kolPush-ups').get(user.language || 'Русский' || 'Русский'), value: '' } ],
      keys = [ {key: 'weight' , 
-     text: translations.get('weight').get(user.language), value: ''},
-     { key: 'StartKolPush-ups', text: translations.get('kolPush-ups').get(user.language), value: '' }  ],
+     text: translations.get('weight').get(user.language || 'Русский' || 'Русский'), value: ''},
+     { key: 'StartKolPush-ups', text: translations.get('kolPush-ups').get(user.language || 'Русский' || 'Русский'), value: '' }  ],
      change = ( key, value ) => {
         user[key] = value
         fetch( `${serverUrl}/change?username=${user.name}&key=${key}&value=${value}` )

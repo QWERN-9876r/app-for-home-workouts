@@ -22,7 +22,7 @@
      programs
     $: rerender = setRerender(false)
     
-    function getPrograms() {
+    const getPrograms = () => {
         fetch(`${serverUrl}/programs`)
         .then(res => res.json())
         .then(value => {
