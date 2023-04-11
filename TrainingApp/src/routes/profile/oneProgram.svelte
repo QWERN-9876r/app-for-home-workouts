@@ -1,6 +1,6 @@
 <div class="programBlock" style="background-image: url({src}); " >
-    <h3 class="programName">{user ? name[user.language] : 'Русский'}</h3>
-    <button on:click={Choose} class="programBtn">{translations.get('choose').get(user.language)}</button>
+    <h3 class="programName">{user && name[user.language] ? name[user.language] : name['Русский']}</h3>
+    <button on:click={Choose} class="programBtn">{translations.get('choose').get(user.language || 'Русский')}</button>
 </div>
 <script>
     import { serverUrl, user, setUser } from '../../staticData'

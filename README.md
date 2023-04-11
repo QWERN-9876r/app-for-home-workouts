@@ -9,8 +9,8 @@ npm start
 
 cd TrainingApp
 npm i
-npm start -- --host
+npm run preview -- --host
 
-По ссылке http://localhost:5173 запуститься svelte приложение.
+По ссылке http://localhost:4173 запуститься svelte приложение.
 
 Сайт создан для домашних тренировок. Со стороны клиента используется Sveltekit, а на сервере используется express, данные хранятся в формате json, а не в BD т.к целью разработчика было освоение Svelte, а не backend разработка.

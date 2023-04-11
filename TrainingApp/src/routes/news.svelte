@@ -19,16 +19,16 @@
     import Loading from "./loading.svelte"
     import { serverUrl } from "../staticData";
 
-    let listUpdate
-
-    let news = new Object(null);
+    let listUpdate,
+     news = new Object(null)
+     
     onMount(() => {
         fetch(`${serverUrl}/news`)
             .then(res => res.json())
                 .then(NewNews => {
                     news = NewNews[0]
                     listUpdate = NewNews[0].listUpdates
-                });
+                })
     })
 </script>
 

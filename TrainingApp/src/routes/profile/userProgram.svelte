@@ -1,7 +1,7 @@
-<div class="programBlock" style="background-image: url({src});" >
+<section class="programBlock" style="background-image: url({src});" >
     <h3 class="programName">{getProgramName()}</h3>
     <button class="programBtn">{translations.get('showPlan').get( user.language || 'Русский' )}</button>
-</div>
+</section>
 
 <script>
     import { onMount } from "svelte"
@@ -22,7 +22,6 @@
         .then( res => res.json() )
         .then( program => {
             name = program.name
-            console.log(name)
             src = program.src
         } )
     })

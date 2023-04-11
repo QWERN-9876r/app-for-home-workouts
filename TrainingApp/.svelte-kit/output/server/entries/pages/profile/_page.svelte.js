@@ -18,11 +18,15 @@ const css$3 = {
   map: null
 };
 const UserProgram = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let name, src;
+  let getProgramName;
+  let src;
   $$result.css.add(css$3);
-  return `<div class="programBlock svelte-47xacu" style="${"background-image: url(" + escape(src, true) + ");"}"><h3 class="programName svelte-47xacu">${escape(name[user.language])}</h3>
-    <button class="programBtn svelte-47xacu">Смотреть план</button>
-</div>`;
+  getProgramName = () => {
+    return "";
+  };
+  return `<section class="programBlock svelte-47xacu" style="${"background-image: url(" + escape(src, true) + ");"}"><h3 class="programName svelte-47xacu">${escape(getProgramName())}</h3>
+    <button class="programBtn svelte-47xacu">${escape(translations.get("showPlan").get(user.language || "Русский"))}</button>
+</section>`;
 });
 const Card = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let rerender;
@@ -39,41 +43,41 @@ const Parameters = create_ssr_component(($$result, $$props, $$bindings, slots) =
   const preKeys = [
     {
       key: "startWeight",
-      text: translations.get("weight").get(user.language),
+      text: translations.get("weight").get(user.language || "Русский"),
       value: ""
     },
     {
       key: "kolPush-ups",
-      text: translations.get("kolPush-ups").get(user.language),
+      text: translations.get("kolPush-ups").get(user.language || "Русский"),
       value: ""
     }
   ], keys = [
     {
       key: "weight",
-      text: translations.get("weight").get(user.language),
+      text: translations.get("weight").get(user.language || "Русский"),
       value: ""
     },
     {
       key: "StartKolPush-ups",
-      text: translations.get("kolPush-ups").get(user.language),
+      text: translations.get("kolPush-ups").get(user.language || "Русский"),
       value: ""
     }
   ];
   $$result.css.add(css$2);
-  return `<h2>${escape(translations.get("itWas").get(user.language))}:</h2>
+  return `<h2>${escape(translations.get("itWas").get(user.language || "Русский"))}:</h2>
 ${each(preKeys, (objectKey) => {
     return `<div class="parametr svelte-1kbkc2s">${user[objectKey.key] ? `${escape(objectKey.text)}: ${escape(user[objectKey.key])}` : `${escape(objectKey.text)}
         <input type="number" min="1" max="3000" class="svelte-1kbkc2s"${add_attribute("value", objectKey.value, 0)}>
-        <button>${escape(translations.get("send").get(user.language))} </button>`}
+        <button>${escape(translations.get("send").get(user.language || "Русский"))} </button>`}
     </div>`;
   })}
 
-<h2>${escape(translations.get("hasBecome").get(user.language))}:</h2>
+<h2>${escape(translations.get("hasBecome").get(user.language || "Русский"))}:</h2>
 ${each(keys, (objectKey) => {
     return `<div class="parametr svelte-1kbkc2s">${user[objectKey.key] ? `${escape(objectKey.text)}: ${escape(user[objectKey.key])}
-    <button>${escape(translations.get("change").get(user.language))} </button>` : `${escape(objectKey.text)}
+    <button>${escape(translations.get("change").get(user.language || "Русский"))} </button>` : `${escape(objectKey.text)}
     <input type="number" min="1" max="3000" class="svelte-1kbkc2s"${add_attribute("value", objectKey.value, 0)}>
-    <button>${escape(translations.get("send").get(user.language))} </button>`}
+    <button>${escape(translations.get("send").get(user.language || "Русский"))} </button>`}
 </div>`;
   })}`;
 });
