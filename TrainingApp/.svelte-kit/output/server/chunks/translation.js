@@ -58,6 +58,34 @@ const translations = /* @__PURE__ */ new Map([
   ["showPlan", /* @__PURE__ */ new Map([
     ["English", "show plan"],
     ["Русский", "Смотреть план"]
+  ])],
+  ["logIn", /* @__PURE__ */ new Map([
+    ["English", "log in"],
+    ["Русский", "Войти"]
+  ])],
+  ["register", /* @__PURE__ */ new Map([
+    ["English", "register"],
+    ["Русский", "Зарегистрироваться"]
+  ])],
+  ["name", /* @__PURE__ */ new Map([
+    ["English", "name"],
+    ["Русский", "имя"]
+  ])],
+  ["password", /* @__PURE__ */ new Map([
+    ["English", "password"],
+    ["Русский", "пароль"]
+  ])],
+  ["noAccount", /* @__PURE__ */ new Map([
+    ["English", "no account"],
+    ["Русский", "нет аккаунта"]
+  ])],
+  ["invalidUsernameOrPassword", /* @__PURE__ */ new Map([
+    ["English", "Invalid username or password"],
+    ["Русский", "Неверный логин или пароль"]
+  ])],
+  ["AUserWithThisNameAlreadyExists", /* @__PURE__ */ new Map([
+    ["English", "A user with this name already exists"],
+    ["Русский", "Пользователь с этим именем уже существует"]
   ])]
 ]);
 export {

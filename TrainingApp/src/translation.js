@@ -59,6 +59,34 @@ const translations = new Map([
         [ 'English', 'show plan' ],
         [ 'Русский', 'Смотреть план' ]
     ])],
+    ['logIn', new Map([
+        [ 'English', 'log in' ],
+        [ 'Русский', 'Войти' ]
+    ])],
+    ['register', new Map([
+        [ 'English', 'register' ],
+        [ 'Русский', 'Зарегистрироваться' ]
+    ])],
+    ['name', new Map([
+        [ 'English', 'name' ],
+        [ 'Русский', 'имя' ]
+    ])],
+    ['password', new Map([
+        [ 'English', 'password' ],
+        [ 'Русский', 'пароль' ]
+    ])],
+    ['noAccount', new Map([
+        [ 'English', 'no account' ],
+        [ 'Русский', 'нет аккаунта' ]
+    ])],
+    ['invalidUsernameOrPassword', new Map([
+        [ 'English', 'Invalid username or password' ],
+        [ 'Русский', 'Неверный логин или пароль' ]
+    ])],
+    ['AUserWithThisNameAlreadyExists', new Map([
+        [ 'English', 'A user with this name already exists' ],
+        [ 'Русский', 'Пользователь с этим именем уже существует' ]
+    ])],
 ])
 // translations.get('showPlan').get( user.language || 'Русский' )
 export default translations

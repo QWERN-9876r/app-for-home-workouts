@@ -1,21 +1,30 @@
 <main>
     <section>
-        <h1>Регистрация</h1>
-        <input type="text" placeholder="имя" bind:value={name} on:input={() => {if ( incorrect() ) { name = '' }}} >
-        <input type="password" placeholder="пароль" bind:value={password}>
-        <button on:click={ register }>Зарегистрироваться</button>
+        <div class="select">
+            <Select {options} {optionNow} {setOptionNow} />
+        </div>
+        <h1> { optionNow.value === 'Русский' ? 'Регистрация' : translations.get('register').get( optionNow.value )} </h1>
+        <input type="text" placeholder={translations.get('name').get( optionNow.value)} bind:value={name} on:input={() => {if ( incorrect() ) { name = '' }}} >
+        <input type="password" placeholder={translations.get('password').get( optionNow.value)} bind:value={password}>
+        <button on:click={ register }>{translations.get('register').get( optionNow.value)}</button>
         {#if error}
-            <p>Пользователь с именем {name} уже существует</p>
+            <p>{translations.get('AUserWithThisNameAlreadyExists').get( optionNow.value)}</p>
         {/if }
     </section>
 </main>
 
 <script>
     import { serverUrl, setUser } from "../../staticData"
+    import Select from "../../select.svelte"
+    import translations from "../../translation"
 
+    const options = [ { value: 'Русский', src: 'Русский.png' },
+    { value: 'English', src: 'English.png' }, ],
+     setOptionNow = value => optionNow = value
     let name = '',
      password = '',
      error = false
+    $: optionNow = setOptionNow(options[0])
 
     const incorrect = () => !isNaN(Number(name[0])) || name[0] === '-' || name[0] === '=' || name[0] === '+',
      register = () => {
@@ -41,6 +50,9 @@
 </script>
 
 <style>
+    section {
+        position: relative;
+    }
     main {
         display: flex;
         align-items: center;
@@ -71,5 +83,10 @@
     p {
         color: red;
         font-weight: 700;
+    }
+    .select {
+        position: absolute;
+        top: 0;
+        right: 25px;
     }
 </style>

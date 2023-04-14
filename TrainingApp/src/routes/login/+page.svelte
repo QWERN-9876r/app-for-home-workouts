@@ -1,11 +1,14 @@
 <main>
     <section>
-        <h1>Войти</h1>
-        <input type="text" placeholder="имя" bind:value={name}>
-        <input type="password" placeholder="пароль" bind:value={password}>
+        <div class="select">
+            <Select {options} {optionNow} {setOptionNow} />
+        </div>
+        <h1>{translations.get('logIn').get( optionNow.value)}</h1>
+        <input type="text" placeholder={translations.get('name').get( optionNow.value)} bind:value={name}>
+        <input type="password" placeholder={translations.get('password').get( optionNow.value)} bind:value={password}>
         <div>
-            <a href="register">Нет аккаунта?</a>
-            <button on:click={ login }>Войти</button>
+            <a href="register">{translations.get('noAccount').get( optionNow.value)}?</a>
+            <button on:click={ login }>{translations.get('logIn').get( optionNow.value)} </button>
         </div>
 
         {#if error}
@@ -13,7 +16,7 @@
             {#if typeof error === 'string'}
             {error}
             {:else}
-            Неверный логин или пароль
+            {translations.get('invalidUsernameOrPassword').get( optionNow.value)}
             {/if}
         </p>
         {/if }
@@ -24,10 +27,17 @@
 
 <script>
     import { serverUrl, setUser } from '../../staticData'
+    import Select from '../../select.svelte'
+    import translations from "../../translation"
 
+    const options = [ { value: 'Русский', src: 'Русский.png' },
+    { value: 'English', src: 'English.png' }, ],
+     setOptionNow = value => optionNow = value
     let name = '',
      password = '',
      error = false
+    $: optionNow = setOptionNow(options[0])
+    
     const login = () => {
         try {
             fetch(`${serverUrl}/login?username=${name}&password=${password}`).then(
@@ -57,6 +67,9 @@
 </script>
 
 <style>
+    section {
+        position: relative;
+    }
     div {
         display: flex;
         justify-content: space-between;
@@ -96,5 +109,10 @@
         text-decoration: underline;
         color: blue;
         align-self: center;
+    }
+    .select {
+        position: absolute;
+        top: 0;
+        right: 25px;
     }
 </style>
